@@ -15,9 +15,12 @@ class CreateOrdersProductsTable extends Migration
     {
         Schema::create('orders_products', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('order_id');
-            $table->integer('products_id');
+            $table->integer('order_id')->unsigned();
+            $table->integer('products_id')->unsigned();
             $table->integer('amounts')->default(1)->comment('so luong san pham');
+
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('products_id')->references('id')->on('products');
         });
     }
 

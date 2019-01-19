@@ -17,6 +17,7 @@ class CreateNewsTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable(false);
             $table->string('subtitle')->comment('phan chu hien thi duoi tieu de');
+            $table->string('url')->nullable(false)->unique();
             $table->string('image') ->comment('anh bai viet');
             $table->text('content');
             $table->timestamps();
