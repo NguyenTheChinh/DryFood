@@ -17,7 +17,7 @@ class CreateOrdersProductsTable extends Migration
             $table->increments('id');
             $table->integer('order_id');
             $table->integer('products_id');
-            $table->integer('amounts')->default(1);
+            $table->integer('amounts')->default(1)->comment('so luong san pham');
         });
     }
 

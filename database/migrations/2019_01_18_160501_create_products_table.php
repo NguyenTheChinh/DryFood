@@ -17,9 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name') -> nullable(false);
             $table->text('description') -> nullable(false);
-            $table->string('code') -> nullable(false);
+            $table->string('code') -> nullable(false) ->comment('ma san pham');
             $table->integer('price') -> nullable(false);
-            $table->string('image') -> nullable(false);
+            $table->string('image') -> nullable(false) ->comment(' link anh san pham');
             $table->integer('category_id');
         });
     }
