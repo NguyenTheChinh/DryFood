@@ -13,7 +13,7 @@ class Product extends Model
 
     public function Order_Product()
     {
-        return $this->hasMany('App\Order_Product', 'order_id', 'id');
+        return $this->hasMany('App\Order_Product', 'products_id', 'id');
     }
 
     public function Category()

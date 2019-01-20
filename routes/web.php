@@ -27,3 +27,14 @@ Route::post('admin/logout', 'Auth\LoginController@logout')->name('logout');
 //Route::get('admin/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 //Route::post('admin/password/reset', 'Auth\ResetPasswordController@reset');
 //
+
+//admin functional
+Route::get('admin', function(){
+    return redirect()->route('order.index');
+});
+
+Route::resources([
+    'admin/product' => 'AdminProductController',
+    'admin/order' => 'AdminOrderController',
+    'admin/news' => 'AdminNewsController'
+]);

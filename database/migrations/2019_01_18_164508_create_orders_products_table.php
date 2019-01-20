@@ -18,6 +18,7 @@ class CreateOrdersProductsTable extends Migration
             $table->integer('order_id')->unsigned();
             $table->integer('products_id')->unsigned();
             $table->integer('amounts')->default(1)->comment('so luong san pham');
+            $table->integer('price')->nullable(false)->comment('gia 1 san pham tai thoi diem order');
 
             $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('products_id')->references('id')->on('products');
