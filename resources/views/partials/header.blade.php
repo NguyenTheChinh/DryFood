@@ -37,7 +37,7 @@
             <ul class="nav navbar-nav">
               <li><a href="/">Trang Chu</a></li>
               <li><a href="/gioi-thieu-cong-ty">Gioi Thieu</a></li>
-              <li><a href="#">San Pham</a></li>
+              <li><a href="/san-pham">San Pham</a></li>
               <li><a href="">Tin Tuc </a></li>
               <li><a href="">Y Kien Khach Hang</a></li>
               <li><a href="">Phan Phoi</a></li>
