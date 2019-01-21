@@ -41,3 +41,7 @@ Route::resources([
 
 /*---frontend---*/
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/gioi-thieu-cong-ty', function () {
+    return view('introCompany');
+});
