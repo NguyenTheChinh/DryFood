@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
 
 // authenticate admin
 Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -38,3 +38,6 @@ Route::resources([
     'admin/order' => 'AdminOrderController',
     'admin/news' => 'AdminNewsController'
 ]);
+
+/*---frontend---*/
+Route::get('/', 'HomeController@index')->name('home');
