@@ -16,7 +16,7 @@ class AdminOrderController extends Controller
     {
         $orders = Order::all();
 //        dd($orders[0]->order_product);
-        return view('admin.order_index', ['orders' => $orders]);
+        return view('admin.order.order_index', ['orders' => $orders]);
     }
 
     /**
