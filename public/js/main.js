@@ -20,3 +20,9 @@ $(document).ready(function(){
         }
     });
 });
+
+/*-------------end js config carsoule news macca--------------*/
+
+$(".shoppingCart").hover(function(){
+    $(".shoppingCartContent").slideToggle();
+})
