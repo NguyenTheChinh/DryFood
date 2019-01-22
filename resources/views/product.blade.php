@@ -15,28 +15,31 @@
                     </a>
                 </h2>
             </div>
-            @foreach($selectProduct as $dataProduct)
+            @foreach(array_chunk($selectProduct, 4) as $dataProductChunk)
             <div class="row productContent">
+                @foreach ($dataProductChunk as $dataProduct)
                 <div class="col-xs-12 col-sm-3">
-                    <div class="thumbnail clearfix">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/img/{{$dataProduct->image}}" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="infoProduct text-center">
-                            <h3 class="infoProduct__name">
-                                <a href="" title="san pham macca">{{$dataProduct->name}}</a>
-                            </h3>
-                            <p class="infoProduct__price">
-                                <span class="priceNotSale">{{$dataProduct->old_price}}</span> <span class="priceSale">{{$dataProduct->price}}</span>
-                            </p>
-
-                            <a href="" class="btn btn-default btn-add-cart">add to cart</a>
+                        <div class="thumbnail clearfix">
+                            <div class="media-link">
+                                <a href="">
+                                    <img src="/uploadMedia/img/{{$dataProduct->image}}" alt="" class="img-responsive">
+                                </a>
+                            </div>
+    
+                            <div class="infoProduct text-center">
+                                <h3 class="infoProduct__name">
+                                    <a href="" title="san pham macca">{{$dataProduct->name}}</a>
+                                </h3>
+                                <p class="infoProduct__price">
+                                    <span class="priceNotSale">{{$dataProduct->old_price}}</span> <span class="priceSale">{{$dataProduct->price}}</span>
+                                </p>
+    
+                                <a href="" class="btn btn-default btn-add-cart">add to cart</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+                
 
             </div>
             @endforeach
