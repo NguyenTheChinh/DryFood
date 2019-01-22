@@ -47,3 +47,5 @@ Route::get('/gioi-thieu-cong-ty', function () {
 });
 
 Route::get('/san-pham','ProducController@index');
+
+// Route::get('/tin-tuc',function)
