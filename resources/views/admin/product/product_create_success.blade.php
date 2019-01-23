@@ -8,6 +8,6 @@
 @endsection
 @section('content')
     <div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> You successfully read this important alert message.
+        <strong>Tạo sản phẩm thành công</strong> <a href="/san-pham/{{$url}}">Click để xem trang sản phẩm</a>
     </div>
 @endsection

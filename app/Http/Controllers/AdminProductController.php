@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -41,31 +42,38 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'category_id' => 'required|numeric|min:1',
-            'code' => 'required|string|max:255',
+            'code' => 'required|string|max:255|unique:products',
             'old_price' => 'required|numeric|min:0',
             'price' => 'required|numeric|min:0',
             'description' => 'required|string',
             'avatar' => 'required|image',
-        ]);
+            'image.*' => 'image',
+        ],[
+            'name.required'=>'Tên sản phẩm không thể bỏ trống',
+            'name.max'=>'Tên sản phẩm quá dài (>255 kí tự)',
+            'code.unique'=>'Mã sản phẩm đã tồn tại',
+            'code.max'=>'Mã sản phẩm quá dài (>255 kí tự)',
+            'avatar.image' =>'Ảnh đại diện không hợp lệ'
+        ])->validate();
         if ($request->hasFile('avatar')) {
             $avatar = Storage::disk('uploads')->put('avatar', $request->file('avatar'));
             $images = '';
             if ($request->hasFile('image')) {
                 foreach ($request->image as $key => $image) {
-                    if($key==0){
+                    if ($key == 0) {
                         $images .= '/uploadMedia/products/' . Storage::disk('uploads')->put('description', $image);
-                    }
-                     else $images .= ' | /uploadMedia/products/' . Storage::disk('uploads')->put('description', $image);
+                    } else $images .= ' | /uploadMedia/products/' . Storage::disk('uploads')->put('description', $image);
                 }
             }
-            dd($request->all());
+//            dd($request->all());
 //            dd(str_slug('â - bádl1s'));
             $product = new Product;
             $product->name = $request->input('name');
-            $product->url = str_slug($request->input('url').'-'.$request->input('code'));
+            $product->url = str_slug($request->input('name') . '-' . $request->input('code'));
+            $product->subtitle = $request->input('subtitle');
             $product->description = $request->input('description');
             $product->code = $request->input('code');
             $product->old_price = $request->input('old_price');
@@ -74,7 +82,7 @@ class AdminProductController extends Controller
             $product->image = $images;
             $product->category_id = $request->input('category_id');
             $product->save();
-            return view('admin.product.product_create_success');
+            return view('admin.product.product_create_success', ['url' => $product->url]);
         }
     }
 
