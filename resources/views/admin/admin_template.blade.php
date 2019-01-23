@@ -95,7 +95,17 @@
         </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
-        <li><a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+        <li>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                <i class="fa fa-lock"></i> Logout
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                  style="display: none;">
+                {{ csrf_field() }}
+            </form>
         </li>
     </ul>
 </header>
@@ -111,6 +121,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/product">
                         <i class="nav-icon icon-drop"></i> Sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/category">
+                        <i class="nav-icon icon-drop"></i> Loại Sản phẩm</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/news">

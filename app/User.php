@@ -20,5 +20,6 @@ class User extends Model implements
     protected $table = "users";
     protected $fillable = ['email', 'username', 'password', 'role'];
     protected $guarded = ['id'];
+    protected $hidden = ['remember_token'];
     public $timestamps = false;
 }

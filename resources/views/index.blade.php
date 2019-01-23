@@ -12,15 +12,15 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="/uploadMedia/img/banner1.png" alt="banner1" class="img-responsive">
+                    <img src="/uploadMedia/images/banner1.png" alt="banner1" class="img-responsive">
                 </div>
             
                 <div class="item">
-                    <img src="/uploadMedia/img/banner1.png" alt="Chicago" class="img-responsive">
+                    <img src="/uploadMedia/images/banner1.png" alt="Chicago" class="img-responsive">
                 </div>
             
                 <div class="item">
-                    <img src="/uploadMedia/img/banner1.png" alt="Chicago" class="img-responsive">
+                    <img src="/uploadMedia/images/banner1.png" alt="Chicago" class="img-responsive">
                 </div>
             </div>
             
@@ -71,7 +71,7 @@
                         <div class="thumbnail clearfix">
                             <div class="media-link">
                                 <a href="">
-                                    <img src="/uploadMedia/img/{{$dataProduct->image}}" alt="" class="img-responsive">
+                                    <img src="{{$dataProduct->avatar}}" alt="" class="img-responsive">
                                 </a>
                             </div>
     

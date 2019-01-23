@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let table = $('#productTable').DataTable();
+    let table = $('#newsTable').DataTable();
 
     $('.deleteOrder').click(function () {
 

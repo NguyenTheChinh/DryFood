@@ -12,13 +12,13 @@
 @section('content')
     <div class="text-center">
         <a class="btn btn-success" href="/admin/product/create">Thêm sản phẩm</a>
-        <a class="btn btn-success" href="/admin/product/create">Thêm loại sản phẩm</a>
     </div>
-    <table id="orderTable" class="table table-light table-bordered" style="width:100%">
+    <table id="productTable" class="table table-light table-bordered" style="width:100%">
         <thead>
         <tr>
             <th>Loại sản phẩm</th>
             <th>Tên sản phẩm</th>
+            <th>Mô tả chung</th>
             <th>Mô tả</th>
             <th>Mã sản phẩm</th>
             <th>Giá cũ</th>
@@ -32,7 +32,8 @@
             <tr>
                 <td>{{$product->category->name}}</td>
                 <td><a href="/san-pham/{{$product->url}}">{{$product->name}}</a></td>
-                <td>{{$product->description}}</td>
+                <td>{!! $product->subtitle !!}</td>
+                <td>{!! $product->description !!}</td>
                 <td>{{$product->code}}</td>
                 <td>{{$product->old_price}}</td>
                 <td>{{$product->price}}</td>

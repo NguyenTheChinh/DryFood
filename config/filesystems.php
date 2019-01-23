@@ -65,7 +65,7 @@ return [
         ],
         'uploads' => [
             'driver' => 'local',
-            'root'   => public_path() . '/uploadMedia/products',
+            'root'   => public_path() . '/uploadMedia',
         ]
 
     ],

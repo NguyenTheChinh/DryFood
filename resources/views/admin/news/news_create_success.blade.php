@@ -8,6 +8,6 @@
 @endsection
 @section('content')
     <div class="alert alert-success" role="alert">
-        <strong>Thêm sản phẩm thành công</strong> <a href="/san-pham/{{$url}}" target="_blank">Click để xem trang sản phẩm</a>
+        <strong>Thêm bài viết thành công</strong> <a href="/tin-tuc/{{$url}}" target="_blank">Click để xem bài viết</a>
     </div>
 @endsection

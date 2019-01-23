@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
+use App\Category;
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminOrderController extends Controller
+class AdminCategoryController extends Controller
 {
     public function __construct()
     {
@@ -16,6 +17,7 @@ class AdminOrderController extends Controller
             return $next($request);
         });
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,9 +25,8 @@ class AdminOrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
-//        dd($orders[0]->order_product);
-        return view('admin.order.order_index', ['orders' => $orders]);
+        $categories = Category::all();
+        return view('admin.category.category_index', ['categories' => $categories]);
     }
 
     /**
@@ -35,7 +36,7 @@ class AdminOrderController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -46,16 +47,26 @@ class AdminOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validator::make($request->all(), [
+            'name' => 'required|string|max:255|unique:category',
+        ], [
+            'name.max' => 'Tên loại sản phẩm quá dài (>255 kí tự)',
+            'name.unique' => 'Tên loại sản phẩm đã tồn tại',
+        ])->validate();
+        $category = new Category;
+        $category->name = $request->input('name');
+        $category->url = str_slug($request->input('name'));
+        $category->save();
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Order $order
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show(Category $category)
     {
         //
     }
@@ -63,10 +74,10 @@ class AdminOrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Order $order
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit(Category $category)
     {
         //
     }
@@ -75,10 +86,10 @@ class AdminOrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\Order $order
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -86,10 +97,10 @@ class AdminOrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Order $order
+     * @param  \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(Category $category)
     {
         //
     }

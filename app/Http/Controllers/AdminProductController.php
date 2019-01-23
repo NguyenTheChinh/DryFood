@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class AdminProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::user();
+            return $next($request);
+        });
+    }
     /**
      * Display a listing of the resource.
      *
@@ -59,13 +68,13 @@ class AdminProductController extends Controller
             'avatar.image' =>'Ảnh đại diện không hợp lệ'
         ])->validate();
         if ($request->hasFile('avatar')) {
-            $avatar = Storage::disk('uploads')->put('avatar', $request->file('avatar'));
+            $avatar = Storage::disk('uploads')->put('products/avatar', $request->file('avatar'));
             $images = '';
             if ($request->hasFile('image')) {
                 foreach ($request->image as $key => $image) {
                     if ($key == 0) {
-                        $images .= '/uploadMedia/products/' . Storage::disk('uploads')->put('description', $image);
-                    } else $images .= ' | /uploadMedia/products/' . Storage::disk('uploads')->put('description', $image);
+                        $images .= '/uploadMedia/' . Storage::disk('uploads')->put('products/description', $image);
+                    } else $images .= ' | /uploadMedia/' . Storage::disk('uploads')->put('products/description', $image);
                 }
             }
 //            dd($request->all());
@@ -78,7 +87,7 @@ class AdminProductController extends Controller
             $product->code = $request->input('code');
             $product->old_price = $request->input('old_price');
             $product->price = $request->input('price');
-            $product->avatar = '/uploadMedia/products/' . $avatar;
+            $product->avatar = '/uploadMedia/' . $avatar;
             $product->image = $images;
             $product->category_id = $request->input('category_id');
             $product->save();
