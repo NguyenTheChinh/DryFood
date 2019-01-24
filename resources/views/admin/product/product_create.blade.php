@@ -6,7 +6,7 @@
 @section('plugins')
     <script src="/js/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
-    <script>CKFinder.config( { connectorPath: '/ckfinder/connector' } );</script>
+    <script>CKFinder.config({connectorPath: '/ckfinder/connector'});</script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/additional-methods.min.js"></script>
     <script src="/js/admin/product/product_create.js"></script>
@@ -17,7 +17,8 @@
         <div class="form-group row">
             <label for="tenSP" class="col-sm-2 col-form-label">Tên Sản Phẩm</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="name" id="tenSP" placeholder="Tên sản phẩm" required>
+                <input type="text" class="form-control" name="name" id="tenSP" placeholder="Tên sản phẩm"
+                       value="{{ old('name') }}" required>
                 @if ($errors->has('name'))
                     <span class="help-block">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -30,20 +31,20 @@
             <div class="col-sm-10">
                 <select name="category_id" class="custom-select" required>
                     @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->id}}" {{(string)$category->id==old('category_id') ? 'selected' : ''}}>{{$category->name}}</option>
                     @endforeach
                 </select>
                 @if ($errors->has('category_id'))
                     <span class="help-block">
-                    <strong>{{ $errors->first('category_id') }}</strong>
-                </span>
+                        <strong>{{ $errors->first('category_id') }}</strong>
+                    </span>
                 @endif
             </div>
         </div>
         <div class="form-group row">
             <label for="maSP" class="col-sm-2 col-form-label">Mã Sản Phẩm</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="code" id="maSP" placeholder="Mã sản phẩm" required>
+                <input type="text" class="form-control" name="code" id="maSP" placeholder="Mã sản phẩm" value="{{ old('code') }}" required>
                 @if ($errors->has('code'))
                     <span class="help-block">
                     <strong>{{ $errors->first('code') }}</strong>
@@ -54,7 +55,7 @@
         <div class="form-group row">
             <label for="giaCu" class="col-sm-2 col-form-label">Giá cũ</label>
             <div class="col-sm-10">
-                <input type="number" min="0" class="form-control" name="old_price" id="giaCu" placeholder="Giá cũ" required>
+                <input type="number" min="0" class="form-control" name="old_price" id="giaCu" value="{{ old('old_price') }}" placeholder="Giá cũ" required>
                 @if ($errors->has('old_price'))
                     <span class="help-block">
                     <strong>{{ $errors->first('old_price') }}</strong>
@@ -65,7 +66,7 @@
         <div class="form-group row">
             <label for="giaSP" class="col-sm-2 col-form-label">Giá Sản Phẩm</label>
             <div class="col-sm-10">
-                <input type="number" min="0" class="form-control" name="price" id="giaSP" placeholder="Giá sản phẩm" required>
+                <input type="number" min="0" class="form-control" name="price" id="giaSP" value="{{ old('price') }}" placeholder="Giá sản phẩm" required>
                 @if ($errors->has('price'))
                     <span class="help-block">
                     <strong>{{ $errors->first('price') }}</strong>
@@ -76,7 +77,6 @@
         <div class="form-group row">
             <label for="customFile" class="col-sm-2 col-form-label">Ảnh đại diện</label>
             <div class="custom-file col-sm-10">
-
                 <input type="file" name="avatar" class="custom-file-input" id="customFile" required>
                 <label class="custom-file-label" for="customFile">Choose file</label>
             </div>
@@ -97,14 +97,13 @@
 
         <div class="form-group row">
             <label for="subtitle" class="col-sm-2 col-form-label">Mô tả chung</label>
-            <textarea name="subtitle" id="subtitle" class="editor col-sm-10"></textarea>
+            <textarea name="subtitle" id="subtitle" class="editor col-sm-10">{{ old('subtitle') }}</textarea>
         </div>
 
         <div class="form-group row">
             <label for="description" class="col-sm-2 col-form-label">Mô tả sản phẩm</label>
-            <textarea name="description" id="description" class="editor"></textarea>
+            <textarea name="description" id="description" class="editor">{{ old('description') }}</textarea>
         </div>
-
 
         <button class="btn btn-primary" type="submit">Tạo sản phẩm</button>
     </form>

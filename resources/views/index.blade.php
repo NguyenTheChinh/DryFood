@@ -70,20 +70,20 @@
                 <div class="col-xs-12 col-sm-3">
                         <div class="thumbnail clearfix">
                             <div class="media-link">
-                                <a href="">
+                                <a href="/san-pham/{{$dataProduct->url}}">
                                     <img src="{{$dataProduct->avatar}}" alt="" class="img-responsive">
                                 </a>
                             </div>
     
                             <div class="infoProduct text-center">
                                 <h3 class="infoProduct__name">
-                                    <a href="" title="san pham macca">{{$dataProduct->name}}</a>
+                                    <a href="/san-pham/{{$dataProduct->url}}" title="san pham macca">{{$dataProduct->name}}</a>
                                 </h3>
                                 <p class="infoProduct__price">
                                     <span class="priceNotSale">{{$dataProduct->old_price}}</span> <span class="priceSale">{{$dataProduct->price}}</span>
                                 </p>
     
-                                <a href="" class="btn btn-default btn-add-cart">add to cart</a>
+                                <a href="" class="btn btn-default btn-add-cart" data-id="{{$dataProduct->id}}" >add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -105,34 +105,34 @@
 
             <div class="row partnerContent owl-carousel">
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner1.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner1.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner1.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner1.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner1.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner1.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner.png" alt="" class="img-responsive">
                 </div>
                 <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
+                    <img src="/uploadMedia/images/partner.png" alt="" class="img-responsive">
                 </div>
 
             </div>
@@ -152,7 +152,7 @@
                     <div class="thumbnail clearfix text-center">
                         <div class="media-link">
                             <a href="">
-                                <img src="/uploadMedia/img/newsImg.png" alt="" class="img-responsive">
+                                <img src="/uploadMedia/images/newsImg.png" alt="" class="img-responsive">
                             </a>
                         </div>
 
@@ -168,7 +168,7 @@
                     <div class="thumbnail clearfix text-center">
                         <div class="media-link">
                             <a href="">
-                                <img src="/uploadMedia/img/newsImg.png" alt="" class="img-responsive">
+                                <img src="/uploadMedia/images/newsImg.png" alt="" class="img-responsive">
                             </a>
                         </div>
 
@@ -184,7 +184,7 @@
                     <div class="thumbnail clearfix text-center">
                         <div class="media-link">
                             <a href="">
-                                <img src="/uploadMedia/img/newsImg.png" alt="" class="img-responsive">
+                                <img src="/uploadMedia/images/newsImg.png" alt="" class="img-responsive">
                             </a>
                         </div>
 

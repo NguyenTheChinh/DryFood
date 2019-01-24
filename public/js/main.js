@@ -1,21 +1,21 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $(".partnerContent").owlCarousel({
-        loop:true,
-        margin:20,
-        responsiveClass:true,
+        loop: true,
+        margin: 20,
+        responsiveClass: true,
         nav: false,
-        responsive:{
-            0:{
-                items:1,
+        responsive: {
+            0: {
+                items: 1,
             },
-            600:{
-                items:3,
-                nav:false
+            600: {
+                items: 3,
+                nav: false
             },
-            1000:{
-                items:5,
-                nav:false,
-                loop:false
+            1000: {
+                items: 5,
+                nav: false,
+                loop: false
             }
         }
     });
@@ -23,6 +23,12 @@ $(document).ready(function(){
 
 /*-------------end js config carsoule news macca--------------*/
 
-$(".shoppingCart").hover(function(){
+$(".shoppingCart").hover(function () {
     $(".shoppingCartContent").slideToggle();
-})
+});
+
+$('.btn-add-cart').click(function () {
+    $.post('/add-to-cart', {id: $(this).attr('data-id')}, function(response){
+
+    });
+});

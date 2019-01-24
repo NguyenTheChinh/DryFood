@@ -48,3 +48,5 @@ Route::get('/gioi-thieu-cong-ty', function () {
 });
 
 Route::get('/san-pham','ProducController@index');
+Route::get('/san-pham/{url}','ProducController@show');
+Route::post('/add-to-cart','CartController@add');

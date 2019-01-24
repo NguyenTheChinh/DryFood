@@ -4,7 +4,7 @@
     <link href="/css/admin/index.css" rel="stylesheet">
 @endsection
 @section('plugins')
-    <script src="/js/ckeditor/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
     <script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
     <script>CKFinder.config( { connectorPath: '/ckfinder/connector' } );</script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
@@ -17,7 +17,7 @@
         <div class="form-group row mb-4">
             <label for="tenSP" class="col-sm-2 col-form-label">Tiêu đề bài viết</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="title" id="tenSP" placeholder="Tiêu đề" required>
+                <input type="text" class="form-control" name="title" id="tenSP" value="{{ old('title') }}" placeholder="Tiêu đề" required>
                 @if ($errors->has('name'))
                     <span class="help-block">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -42,12 +42,12 @@
 
         <div class="form-group row mb-4">
             <label for="subtitle" class="col-sm-2 col-form-label">Tổng quan</label>
-            <textarea name="subtitle" id="subtitle" class="editor col-sm-10"></textarea>
+            <textarea name="subtitle" id="subtitle" class="editor col-sm-10">{{ old('subtitle') }}</textarea>
         </div>
 
         <div class="form-group row mb-4">
             <label for="description" class="col-sm-2 col-form-label">Nội dung</label>
-            <textarea name="content" id="description" class="editor"></textarea>
+            <textarea name="content" id="description" class="editor">{{ old('content') }}</textarea>
         </div>
 
         <button class="btn btn-primary" type="submit">Đăng bài viết</button>
