@@ -988,4 +988,46 @@ footer {
       color: #252525;
       font-weight: 300; }
 
+.contact .blockTitle h2 {
+  padding: 5px 10px;
+  font-size: 33px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  text-transform: uppercase;
+  text-align: center;
+  color: #203872; }
+  .contact .blockTitle h2 a {
+    color: #203872;
+    padding: 0 20px;
+    line-height: 36px;
+    background: #fff;
+    padding: 0 10px;
+    z-index: 999999;
+    /* font-weight: 600; */
+    display: inline-block;
+    /* text-transform: uppercase; */
+    text-decoration: none; }
+  .contact .blockTitle h2::after {
+    content: "";
+    background: #203872;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    right: 0;
+    z-index: -1; }
+.contact .contactContent p, .contact .contactContent a {
+  font-size: 14px;
+  color: #5c5c5c;
+  text-decoration: none; }
+  .contact .contactContent p span, .contact .contactContent a span {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic; }
+
 /*# sourceMappingURL=style.css.map */

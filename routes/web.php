@@ -53,6 +53,14 @@ Route::get("/y-kien-khach-hang", function(){
     return view("opinionCustomer");
 });
 
+// Route::get("/phan-phoi",function(){
+//     return view("delivery");
+// });
+
+Route::get("/lien-he", function(){
+    return view("contact");
+});
+
 Route::get('/san-pham','ProducController@index');
 Route::get('/san-pham/{url}','ProducController@show');
 Route::post('/add-to-cart','CartController@add');

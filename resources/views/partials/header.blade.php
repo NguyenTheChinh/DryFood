@@ -65,8 +65,8 @@
               <li><a href="/san-pham">San Pham</a></li>
               <li><a href="/tin-tuc">Tin Tuc </a></li>
               <li><a href="/y-kien-khach-hang">Y Kien Khach Hang</a></li>
-              <li><a href="">Phan Phoi</a></li>
-              <li><a href="">Lien He</a></li>
+              <li><a href="javascript:void(0)">Phan Phoi</a></li>
+              <li><a href="/lien-he">Lien He</a></li>
             </ul>
             <!-- <ul class="nav navbar-nav navbar-right">
               <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
