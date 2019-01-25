@@ -4,9 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminOrderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::user();
+            return $next($request);
+        });
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +25,7 @@ class AdminOrderController extends Controller
     {
         $orders = Order::all();
 //        dd($orders[0]->order_product);
-        return view('admin.order_index', ['orders' => $orders]);
+        return view('admin.order.order_index', ['orders' => $orders]);
     }
 
     /**

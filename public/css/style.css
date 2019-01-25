@@ -883,6 +883,49 @@ footer {
         .otherProduct .productContent .thumbnail .infoProduct .btn-add-cart:hover {
           background: #011144; }
 
+.commentFacebook {
+  margin-top: 40px; }
+  .commentFacebook .bncTitle .v2_bnc_title_main {
+    background: #e7e7e7;
+    border-top: 3px solid #203872;
+    position: relative;
+    width: 100%;
+    float: left; }
+    .commentFacebook .bncTitle .v2_bnc_title_main .v2_bnc_title_icon {
+      position: absolute;
+      top: -3px;
+      left: 0;
+      display: none;
+      background: #248437;
+      padding: 12px;
+      /* display: inline-block; */
+      color: #fff;
+      width: 36px;
+      height: 39px;
+      text-align: center; }
+    .commentFacebook .bncTitle .v2_bnc_title_main h2 {
+      background: #203872;
+      padding: 0 20px;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+      height: 36px;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0;
+      line-height: 36px; }
+      .commentFacebook .bncTitle .v2_bnc_title_main h2::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 36px 36px 0 0;
+        border-color: #203872 transparent transparent;
+        position: absolute;
+        right: -36px;
+        top: 0; }
+
 /*-----------------------------------End css for detail product-----------------------------------*/
 
 /*# sourceMappingURL=style.css.map */

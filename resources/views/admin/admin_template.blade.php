@@ -7,6 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Admin</title>
 
+    <style>
+        #loader {
+            transition: all .3s ease-in-out;
+            opacity: 1;
+            visibility: visible;
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            background: #fff;
+            z-index: 90000
+        }
+
+        #loader.fadeOut {
+            opacity: 0;
+            visibility: hidden
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+            background-color: #333;
+            border-radius: 100%;
+            -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+            animation: sk-scaleout 1s infinite ease-in-out
+        }
+
+        @-webkit-keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0)
+            }
+            100% {
+                -webkit-transform: scale(1);
+                opacity: 0
+            }
+        }
+
+        @keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0)
+            }
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                opacity: 0
+            }
+        }
+    </style>
     <link href="/admin_core/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
     <link href="/admin_core/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
     <link href="/admin_core/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -16,6 +67,17 @@
     @yield('styles')
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
 <header class="app-header navbar">
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +95,17 @@
         </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
-        <li><a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+        <li>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                <i class="fa fa-lock"></i> Logout
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                  style="display: none;">
+                {{ csrf_field() }}
+            </form>
         </li>
     </ul>
 </header>
@@ -49,6 +121,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/product">
                         <i class="nav-icon icon-drop"></i> Sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/category">
+                        <i class="nav-icon icon-drop"></i> Loại Sản phẩm</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/news">

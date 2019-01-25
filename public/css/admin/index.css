@@ -26,3 +26,7 @@ table.innerBorder tr td:last-child,
 table.innerBorder tr th:last-child {
     border-right: 0;
 }
+
+.error, .help-block{
+    color: red;
+}

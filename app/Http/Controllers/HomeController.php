@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use DB;
 
@@ -20,7 +21,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        return view('index');
+        $selectProduct = DB::select('select * from products');
+        return view('index',['selectProduct'=>$selectProduct]);
     }
 
 }

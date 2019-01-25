@@ -2,7 +2,7 @@
     <div class="container"> 
         <div class="logo pull-left">
             <a href="index.html">
-                <img src="/uploadMedia/img/logo.png" alt="" class="img-responsive" width="360px" height="125px" alt="cong ty">
+                <img src="/uploadMedia/images/logo.png" alt="" class="img-responsive" width="360px" height="125px" alt="cong ty">
             </a>
         </div>
 

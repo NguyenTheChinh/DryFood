@@ -31,6 +31,8 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/owlcarousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
     <script src="/js/main.js"></script>
     @yield('scripts')
 </body>
