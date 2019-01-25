@@ -927,5 +927,65 @@ footer {
         top: 0; }
 
 /*-----------------------------------End css for detail product-----------------------------------*/
+.opionCustomer .bncTitle .v2_bnc_title_main {
+  background: #e7e7e7;
+  border-top: 3px solid #203872;
+  position: relative;
+  width: 100%;
+  float: left; }
+  .opionCustomer .bncTitle .v2_bnc_title_main .v2_bnc_title_icon {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    display: none;
+    background: #248437;
+    padding: 12px;
+    /* display: inline-block; */
+    color: #fff;
+    width: 36px;
+    height: 39px;
+    text-align: center; }
+  .opionCustomer .bncTitle .v2_bnc_title_main h2 {
+    background: #203872;
+    padding: 0 20px;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    height: 36px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0;
+    line-height: 36px; }
+    .opionCustomer .bncTitle .v2_bnc_title_main h2::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 36px 36px 0 0;
+      border-color: #203872 transparent transparent;
+      position: absolute;
+      right: -36px;
+      top: 0; }
+.opionCustomer .opionCustomerContent {
+  margin-top: 30px; }
+  .opionCustomer .opionCustomerContent:nth-child(2) {
+    margin-top: 70px; }
+  .opionCustomer .opionCustomerContent .media {
+    padding: 15px;
+    background: lightgray;
+    border-radius: 30px; }
+    .opionCustomer .opionCustomerContent .media .media-link {
+      width: 30%;
+      height: 147px;
+      padding-right: 20px; }
+      .opionCustomer .opionCustomerContent .media .media-link img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%; }
+    .opionCustomer .opionCustomerContent .media .media-body {
+      color: #252525;
+      font-weight: 300; }
 
 /*# sourceMappingURL=style.css.map */

@@ -49,6 +49,10 @@ Route::get('/gioi-thieu-cong-ty', function () {
 
 Route::get("/tin-tuc", 'newsController@index');
 
+Route::get("/y-kien-khach-hang", function(){
+    return view("opinionCustomer");
+});
+
 Route::get('/san-pham','ProducController@index');
 Route::get('/san-pham/{url}','ProducController@show');
 Route::post('/add-to-cart','CartController@add');
