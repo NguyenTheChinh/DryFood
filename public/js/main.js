@@ -23,6 +23,12 @@ $(document).ready(function(){
 
 /*-------------end js config carsoule news macca--------------*/
 
-$(".shoppingCart").hover(function(){
-    $(".shoppingCartContent").slideToggle();
-})
+$(".shoppingCart").on("mouseover",function(){
+    $(".shoppingCartContent").slideDown();
+    $(".shoppingCartContent").on("mouseleave", function(){
+        $(".shoppingCartContent").slideUp();
+    })
+});
+// $(".shoppingCart").not(".shoppingCartContent").on("mouseleave",function(){
+//     $(".shoppingCartContent").slideUp();
+// })

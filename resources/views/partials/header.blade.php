@@ -22,31 +22,20 @@
             <div class="myCart text-center">
                 Giỏ hàng của tôi
             </div>
+            <div class="media clearfix">
+                <div class="media-link pull-left">
+                    <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="media-body">
+                    <p class="nameProductCart">Hat Dieu</p>
+                    <div class="infoProductCart">
+                        <p class="pull-left">SL: <span class="quanityProductCart">1</span>x <span class="priceProductCart">50000</span></p>
+                        <p class="pull-right deleteProductCart"><a href="" title="delete item"><i class="fa fa-trash-o"></i></a></p>
+                    </div>
+                </div>
+            </div>    
+            
 
-            <div class="media clearfix">
-                <div class="media-link pull-left">
-                    <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
-                </div>
-                <div class="media-body">
-                    <p class="nameProductCart">hat macca</p>
-                    <div class="infoProductCart">
-                        <p class="pull-left">SL: <span class="quanityProductCart">1</span>x <span class="priceProductCart">50.000</span></p>
-                        <p class="pull-right deleteProductCart"><a href="" title="delete item"><i class="fa fa-trash-o"></i></a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="media clearfix">
-                <div class="media-link pull-left">
-                    <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
-                </div>
-                <div class="media-body">
-                    <p class="nameProductCart">hat macca</p>
-                    <div class="infoProductCart">
-                        <p class="pull-left">SL: <span class="quanityProductCart">1</span>x <span class="priceProductCart">50.000</span></p>
-                        <p class="pull-right deleteProductCart"><a href="" title="delete item"><i class="fa fa-trash-o"></i></a></p>
-                    </div>
-                </div>
-            </div>
 
 
             <p style="color : #919191; font-weight: 600;padding : 15px 0px;">Tong tien :<span class="pull-right totalPrice" style="color : #203872">50.000</span></p>

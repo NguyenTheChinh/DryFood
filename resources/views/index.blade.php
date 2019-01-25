@@ -83,7 +83,11 @@
                                     <span class="priceNotSale">{{$dataProduct->old_price}}</span> <span class="priceSale">{{$dataProduct->price}}</span>
                                 </p>
     
-                                <a href="" class="btn btn-default btn-add-cart">add to cart</a>
+                                <form action="/" method="POST">
+                                    <input type="hidden" name="product_id" value="{{ $dataProduct->id }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <button type="suubmit" class="btn btn-default btn-add-cart">add to cart</button>
+                                </form>
                             </div>
                         </div>
                     </div>
