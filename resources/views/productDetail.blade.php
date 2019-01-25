@@ -70,7 +70,7 @@
             </hgroup>
         </div>
 
-        <div class="describeContent">
+        <div class="describeContent ck-content">
             <?php echo "$product->description"?>
         </div>
     </div>

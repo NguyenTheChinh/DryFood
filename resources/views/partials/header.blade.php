@@ -63,7 +63,7 @@
               <li><a href="/">Trang Chu</a></li>
               <li><a href="/gioi-thieu-cong-ty">Gioi Thieu</a></li>
               <li><a href="/san-pham">San Pham</a></li>
-              <li><a href="">Tin Tuc </a></li>
+              <li><a href="/tin-tuc">Tin Tuc </a></li>
               <li><a href="">Y Kien Khach Hang</a></li>
               <li><a href="">Phan Phoi</a></li>
               <li><a href="">Lien He</a></li>

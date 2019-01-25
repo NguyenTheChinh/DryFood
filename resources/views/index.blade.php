@@ -151,56 +151,30 @@
                 </hgroup>
             </div>
 
-            <div class="newsContent row">
-                <div class="col-xs-12 col-sm-4">
-                    <div class="thumbnail clearfix text-center">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/images/newsImg.png" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="newsInfo">
-                            <h3 class="newsInfo__name"><a title="Cách phân biệt quả óc chó Mĩ với óc chó Trung Quốc">Cách phân biệt quả óc chó Mĩ với óc chó Trung Quốc</a></h3>
-                            <p class="newsInfo__content">Quả óc chó Trung Quốc: thường được gọi là quả&nbsp;óc chó tuyết,&nbsp;óc chó Vân Nam
-                                Quả óc chó Mỹ: thường có các tên gọi như&nbsp;Chander, Harley, Tulare, Vina, …</p>
-                            <a href="" class="btn btn-default btn-read-more">Đọc thêm</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <div class="thumbnail clearfix text-center">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/images/newsImg.png" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="newsInfo">
-                            <h3 class="newsInfo__name"><a title="Cách phân biệt quả óc chó Mĩ với óc chó Trung Quốc">Cách phân biệt quả óc chó Mĩ với óc chó Trung Quốc</a></h3>
-                            <p class="newsInfo__content">Quả óc chó Trung Quốc: thường được gọi là quả&nbsp;óc chó tuyết,&nbsp;óc chó Vân Nam
-                                Quả óc chó Mỹ: thường có các tên gọi như&nbsp;Chander, Harley, Tulare, Vina, …</p>
-                            <a href="" class="btn btn-default btn-read-more">Đọc thêm</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <div class="thumbnail clearfix text-center">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/images/newsImg.png" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="newsInfo">
-                            <h3 class="newsInfo__name"><a title="Cách phân biệt quả óc chó Mĩ với óc chó Trung Quốc">Cách phân biệt quả óc chó Mĩ với óc chó Trung Quốc</a></h3>
-                            <p class="newsInfo__content">Quả óc chó Trung Quốc: thường được gọi là quả&nbsp;óc chó tuyết,&nbsp;óc chó Vân Nam
-                                Quả óc chó Mỹ: thường có các tên gọi như&nbsp;Chander, Harley, Tulare, Vina, …</p>
-                            <a href="" class="btn btn-default btn-read-more">Đọc thêm</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @foreach (array_chunk($news, 3) as $newsChunk)
+                <div class="newsContent row">
+                    @foreach ($newsChunk as $newsData)
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="thumbnail clearfix text-center">
+                                <div class="media-link">
+                                    <a href="/tin-tuc/{{ $newsData->url }}">
+                                        <img src="{{ $newsData->image }}" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+        
+                                <div class="newsInfo">
+                                    <h3 class="newsInfo__name"><a title="{{ $newsData->title }}" href="/tin-tuc/{{ $newsData->url }}">{{ $newsData->title }}</a></h3>
+                                    <div class="newsInfo__content">
+                                        <?php echo "$newsData->subtitle" ?>
+                                    </div>
+                                    <a href="/tin-tuc/{{ $newsData->url }}" class="btn btn-default btn-read-more">Đọc thêm</a>
+                                </div>
+                            </div>
+                        </div>    
+                    @endforeach
+                    
+                </div>    
+            @endforeach
         </div>
     </section>
     <!--end section news-->

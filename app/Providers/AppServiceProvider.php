@@ -20,6 +20,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         $selectProduct = DB::select('select * from products');
         View::share('selectProduct', $selectProduct);
+        $news = DB::select('select * from news');
+        View::share('news',$news);
     }
 
     /**
