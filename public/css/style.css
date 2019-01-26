@@ -686,7 +686,9 @@ header .container {
 /*--------------------------------end css for news block---------------------------*/
 /*----------------------------CSS for footer------------------------------*/
 footer {
-  margin-top: 40px; }
+  margin-top: 40px; 
+  margin-bottom: 20px;
+}
   footer .footerInfoCompany h4 {
     font-size: 18px;
     font-weight: bold;
@@ -1149,5 +1151,45 @@ footer {
 
 .centerLogo img {
   margin: 0px auto; }
+
+
+
+/*CSS for login form*/
+
+.loginForm {
+  margin-top: 40px; }
+  .loginForm .blockTitle h2 {
+    padding: 5px 10px;
+    font-size: 33px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    text-transform: uppercase;
+    text-align: center;
+    color: #203872; }
+    .loginForm .blockTitle h2 a {
+      color: #203872;
+      padding: 0 20px;
+      line-height: 36px;
+      background: #fff;
+      padding: 0 10px;
+      z-index: 999999;
+      /* font-weight: 600; */
+      display: inline-block;
+      /* text-transform: uppercase; */
+      text-decoration: none; }
+    .loginForm .blockTitle h2::after {
+      content: "";
+      background: #203872;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      right: 0;
+      z-index: -1; }
 
 /*# sourceMappingURL=style.css.map */
