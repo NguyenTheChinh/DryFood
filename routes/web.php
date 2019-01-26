@@ -64,3 +64,5 @@ Route::get("/lien-he", function(){
 Route::get('/san-pham','ProducController@index');
 Route::get('/san-pham/{url}','ProducController@show');
 Route::post('/add-to-cart','CartController@add');
+
+Route::get('/xac-nhan-don-hang','OrderController@index');

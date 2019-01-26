@@ -8,7 +8,7 @@
 
         <div class="cart-and-hotline pull-right">
             <div class="shoppingCart">
-                <a href="">
+                <a href="javacript:void(0)">
                     <span class="nameCart">Gio Hang</span> <span class="toolbar-count">0</span>
                 </a>
             </div>
@@ -40,7 +40,7 @@
 
             <p style="color : #919191; font-weight: 600;padding : 15px 0px;">Tong tien :<span class="pull-right totalPrice" style="color : #203872">50.000</span></p>
 
-            <a href="" class="btn btn-default btn-buy-items pull-right">tien hanh dat hang</a>
+            <a href="/xac-nhan-don-hang" class="btn btn-default btn-buy-items pull-right">tien hanh dat hang</a>
         </div>
     </div>
 </header>
