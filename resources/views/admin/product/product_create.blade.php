@@ -76,10 +76,13 @@
         </div>
         <div class="form-group row">
             <label for="customFile" class="col-sm-2 col-form-label">Ảnh đại diện</label>
-            <div class="custom-file col-sm-10">
-                <input type="file" name="avatar" class="custom-file-input" id="customFile" required>
-                <label class="custom-file-label" for="customFile">Choose file</label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input type="file" name="avatar" class="custom-file-input" id="customFile" required>
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
             </div>
+            
             @if ($errors->has('avatar'))
                 <span class="help-block w-100">
                     <strong>{{ $errors->first('avatar') }}</strong>
@@ -89,22 +92,30 @@
 
         <div class="form-group row">
             <label for="customFiles" class="col-sm-2 col-form-label">Ảnh sản phẩm</label>
-            <div class="custom-file col-sm-10">
-                <input type="file" name="image[]" class="custom-file-input" id="customFiles" multiple>
-                <label class="custom-file-label" for="customFiles">Choose file</label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input type="file" name="image[]" class="custom-file-input" id="customFiles" multiple>
+                    <label class="custom-file-label" for="customFiles">Choose file</label>
+                </div>
             </div>
+            
         </div>
 
         <div class="form-group row">
             <label for="subtitle" class="col-sm-2 col-form-label">Mô tả chung</label>
-            <textarea name="subtitle" id="subtitle" class="editor col-sm-10">{{ old('subtitle') }}</textarea>
+            <div class="col-sm-10">
+                <textarea name="subtitle" id="subtitle" class="editor">{{ old('subtitle') }}</textarea>
+            </div>
+            
         </div>
 
         <div class="form-group row">
             <label for="description" class="col-sm-2 col-form-label">Mô tả sản phẩm</label>
-            <textarea name="description" id="description" class="editor">{{ old('description') }}</textarea>
+            <div class="col-sm-10">
+                <textarea name="description" id="description" class="editor">{{ old('description') }}</textarea>
+            </div>
         </div>
 
-        <button class="btn btn-primary" type="submit">Tạo sản phẩm</button>
+        <button class="btn btn-primary pull-right" type="submit">Tạo sản phẩm</button><br><br>
     </form>
 @endsection

@@ -10,9 +10,6 @@
     <script src="/js/admin/product/product_index.js"></script>
 @endsection
 @section('content')
-    <div class="text-center">
-        <a class="btn btn-success" href="/admin/product/create">Thêm sản phẩm</a>
-    </div>
     <table id="productTable" class="table table-light table-bordered" style="width:100%">
         <thead>
         <tr>
@@ -52,4 +49,7 @@
         @endforeach
         </tbody>
     </table>
+    <div class="pull-left">
+        <a class="btn btn-success" href="/admin/product/create">Thêm sản phẩm</a>
+    </div>
 @endsection
