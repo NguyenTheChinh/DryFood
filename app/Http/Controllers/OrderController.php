@@ -10,4 +10,8 @@ class OrderController extends Controller
         //xu ly
         return view("paymentValidate");
     }
+
+    public function successOrder(){
+        return view("orderSuccess");
+    }
 }

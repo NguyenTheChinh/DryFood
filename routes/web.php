@@ -66,3 +66,5 @@ Route::get('/san-pham/{url}','ProducController@show');
 Route::post('/add-to-cart','CartController@add');
 
 Route::get('/xac-nhan-don-hang','OrderController@index');
+
+Route::get('/dat-hang-thanh-cong','OrderController@successOrder');
