@@ -2,15 +2,20 @@
     <div class="container"> 
         <div class="logo pull-left">
             <a href="index.html">
-                <img src="/uploadMedia/images/logo.png" alt="" class="img-responsive" width="360px" height="125px" alt="cong ty">
+                <img src="uploadMedia/images/logo.png" alt="" class="img-responsive" width="360px" height="125px" alt="cong ty">
             </a>
         </div>
 
         <div class="cart-and-hotline pull-right">
             <div class="shoppingCart">
-                <a href="javacript:void(0)">
+                <a href="javascript:void(0)">
                     <span class="nameCart">Gio Hang</span> <span class="toolbar-count">0</span>
                 </a>
+
+            </div>
+
+            <div class="shoppingCartIconMobile">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="toolbar-count">0</span> 
             </div>
 
             <div class="hotline">
@@ -22,28 +27,41 @@
             <div class="myCart text-center">
                 Giỏ hàng của tôi
             </div>
+
             <div class="media clearfix">
                 <div class="media-link pull-left">
-                    <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
+                    <img src="img/productDemo1.jpg" alt="" class="img-responsive">
                 </div>
                 <div class="media-body">
-                    <p class="nameProductCart">Hat Dieu</p>
+                    <p class="nameProductCart">hat macca</p>
                     <div class="infoProductCart">
-                        <p class="pull-left">SL: <span class="quanityProductCart">1</span>x <span class="priceProductCart">50000</span></p>
+                        <p class="pull-left">SL: <span class="quanityProductCart">1</span>x <span class="priceProductCart">50.000</span></p>
                         <p class="pull-right deleteProductCart"><a href="" title="delete item"><i class="fa fa-trash-o"></i></a></p>
                     </div>
                 </div>
-            </div>    
-            
-
+            </div>
+            <div class="media clearfix">
+                <div class="media-link pull-left">
+                    <img src="img/productDemo1.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="media-body">
+                    <p class="nameProductCart">hat macca</p>
+                    <div class="infoProductCart">
+                        <p class="pull-left">SL: <span class="quanityProductCart">1</span>x <span class="priceProductCart">50.000</span></p>
+                        <p class="pull-right deleteProductCart"><a href="" title="delete item"><i class="fa fa-trash-o"></i></a></p>
+                    </div>
+                </div>
+            </div>
 
 
             <p style="color : #919191; font-weight: 600;padding : 15px 0px;">Tong tien :<span class="pull-right totalPrice" style="color : #203872">50.000</span></p>
 
-            <a href="/xac-nhan-don-hang" class="btn btn-default btn-buy-items pull-right">tien hanh dat hang</a>
+            <a href="" class="btn btn-default btn-buy-items pull-right">tien hanh dat hang</a>
         </div>
     </div>
 </header>
+
+<!--end header-->
 
     <!--end header-->
 

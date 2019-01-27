@@ -362,6 +362,23 @@ header .container {
         font-weight: 600;
         text-decoration: none;
         padding: 10px 14px; }
+    header .container .cart-and-hotline .shoppingCartIconMobile {
+      cursor: pointer; }
+      header .container .cart-and-hotline .shoppingCartIconMobile .fa-shopping-cart {
+        font: normal normal normal 14px/1 FontAwesome;
+        color: #203872;
+        font-size: 20px;
+        margin-right: 10px; }
+      header .container .cart-and-hotline .shoppingCartIconMobile .toolbar-count {
+        color: #fff;
+        font-size: 13px;
+        background: #203872;
+        border-radius: 100% !important;
+        width: 19px;
+        height: 19px;
+        text-align: center;
+        line-height: 19px;
+        float: right; }
   header .container .shoppingCartContent {
     background: white;
     width: 31%;
@@ -686,9 +703,8 @@ header .container {
 /*--------------------------------end css for news block---------------------------*/
 /*----------------------------CSS for footer------------------------------*/
 footer {
-  margin-top: 40px; 
-  margin-bottom: 20px;
-}
+  margin-top: 40px;
+  margin-bottom: 20px; }
   footer .footerInfoCompany h4 {
     font-size: 18px;
     font-weight: bold;
@@ -1152,44 +1168,118 @@ footer {
 .centerLogo img {
   margin: 0px auto; }
 
+/*Responsive for mobile*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  header .logo {
+    width: 70%;
+    display: block; }
+  header .hotline, header .shoppingCart {
+    display: none; } }
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  header .logo {
+    width: 70%; }
+  header .hotline, header .shoppingCartIconMobile {
+    display: none; }
 
+  footer .footerInfoCompany, footer .maccaVideo {
+    width: 50%; }
+  footer .ourLocation {
+    width: 100%; } }
+@media only screen and (max-width: 767px) {
+  header .container .shoppingCartContent {
+    width: 60%; }
 
-/*CSS for login form*/
+  .product .productContent .col-sm-3 {
+    width: 50%; }
 
-.loginForm {
-  margin-top: 40px; }
-  .loginForm .blockTitle h2 {
-    padding: 5px 10px;
-    font-size: 33px;
-    font-weight: 300;
-    margin-bottom: 20px;
-    line-height: 1.5;
-    position: relative;
-    z-index: 1;
-    overflow: visible;
-    text-transform: uppercase;
-    text-align: center;
-    color: #203872; }
-    .loginForm .blockTitle h2 a {
-      color: #203872;
-      padding: 0 20px;
-      line-height: 36px;
-      background: #fff;
-      padding: 0 10px;
-      z-index: 999999;
-      /* font-weight: 600; */
-      display: inline-block;
-      /* text-transform: uppercase; */
-      text-decoration: none; }
-    .loginForm .blockTitle h2::after {
-      content: "";
-      background: #203872;
-      height: 1px;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      right: 0;
-      z-index: -1; }
+  .news .newsContent .col-sm-4 {
+    width: 50%; } }
+/*responsive moblie*/
+@media only screen and (min-width: 767px) {
+  header .container .cart-and-hotline .shoppingCartIconMobile {
+    display: none; }
+  header .container .cart-and-hotline .hotline {
+    margin-left: 15px; } }
+@media only screen and (min-width : 768px) and (max-width : 992px){
+  header .container .shoppingCartContent{
+    width: 47%;
+  }
+}
+    @media only screen and (max-width : 992px){
+      .navbar-nav .open .dropdown-menu {
+          position: static;
+          float: none;
+          width: auto;
+          margin-top: 0;
+          background-color: transparent;
+          border: 0;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+      }
+      .navbar-nav .open .dropdown-menu>li>a {
+          line-height: 20px;
+      }
+      .navbar-nav .open .dropdown-menu>li{
+        border-right: none;
+      }
+      .navbar-nav .open .dropdown-menu>li>a,
+      .navbar-nav .open .dropdown-menu .dropdown-header {
+          padding: 5px 15px 5px 25px;
+      }
+      .dropdown-menu>li>a {
+          display: block;
+          padding: 3px 20px;
+          clear: both;
+          font-weight: normal;
+          line-height: 1.42857143;
+          color: #333;
+          white-space: nowrap;
+      }
+      .navbar-header {
+          float: none;
+      }
+      .navbar-toggle {
+          display: block;
+      }
+      .navbar-collapse {
+          border-top: 1px solid transparent;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+      .navbar-collapse.collapse {
+          display: none!important;
+      }
+      .navbar-nav {
+          float: none!important;
+          /*margin: 7.5px -15px;*/
+          margin: 7.5px 50px 7.5px -15px
+      }
+      .navbar-nav>li {
+          float: none;
+          border-right: none!important;
+      }
+      .navbar-nav>li>a {
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .navbar-text {
+          float: none;
+          margin: 15px 0;
+      }
+      /* since 3.1.0 */
+      .navbar-collapse.collapse.in {
+          display: block!important;
+      }
+      .collapsing {
+          overflow: hidden!important;
+      }
+  }
+@media only screen and (min-width: 992px) {
+  .navbar-default li a {
+    padding-left: 20px;
+    padding-right: 20px; } }
+@media only screen and (min-width: 1200px) {
+  .navbar-default li a {
+    padding-left: 30px;
+    padding-right: 30px; } }
 
 /*# sourceMappingURL=style.css.map */
