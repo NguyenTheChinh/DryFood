@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 
 @section('title')
-    Gioi thieu ve cong ty, toan macca
+    Giới thiệu về công ty TNHH MTV Đoàn Thủy
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
         <div class="container">
             <div class="blockTitle">
                 <h2>
-                    <a href="">
-                        Gioi thieu chung ve cong ty
+                    <a href="javascript:void(0)">
+                        Giới thiệu chung về công ty
                     </a>
                 </h2>
             </div>
@@ -30,148 +30,7 @@
     </section>
     <!--end section our Company-->
 
-    <section class="partner">
-        <div class="container">
-            <div class="blockTitle">
-                <h2><a href="">Doi Tac va cac chung chi</a></h2>
-            </div>
 
-            <div class="row partnerContent owl-carousel">
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner1.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner1.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner1.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
-                </div>
-                <div class="partnerContent__item">
-                    <img src="/uploadMedia/img/partner.png" alt="" class="img-responsive">
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--end section partner-->
-
-
-    <section class="product">
-        <div class="container">
-            <div class="blockTitle">
-                <h2>
-                    <a href="">
-                        San pham cua Toan macca
-                    </a>
-                </h2>
-            </div>
-
-            <div class="row productContent">
-                <div class="col-xs-12 col-sm-3">
-                    <div class="thumbnail clearfix">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="infoProduct text-center">
-                            <h3 class="infoProduct__name">
-                                <a href="" title="san pham macca">hat macca</a>
-                            </h3>
-                            <p class="infoProduct__price">
-                                <span class="priceNotSale">300.000</span> <span class="priceSale">220.000</span>
-                            </p>
-
-                            <a href="" class="btn btn-default btn-add-cart">add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-3">
-                    <div class="thumbnail clearfix">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="infoProduct text-center">
-                            <h3 class="infoProduct__name">
-                                <a href="" title="san pham macca">hat macca</a>
-                            </h3>
-                            <p class="infoProduct__price">
-                                <span class="priceNotSale">300.000</span> <span class="priceSale">220.000</span>
-                            </p>
-
-                            <a href="" class="btn btn-default btn-add-cart">add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-3">
-                    <div class="thumbnail clearfix">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="infoProduct text-center">
-                            <h3 class="infoProduct__name">
-                                <a href="" title="san pham macca">qua oc cho </a>
-                            </h3>
-                            <p class="infoProduct__price">
-                                <span class="priceNotSale">300.000</span> <span class="priceSale">220.000</span>
-                            </p>
-
-                            <a href="" class="btn btn-default btn-add-cart">add to cart</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-xs-12 col-sm-3">
-                    <div class="thumbnail clearfix">
-                        <div class="media-link">
-                            <a href="">
-                                <img src="/uploadMedia/img/productDemo1.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="infoProduct text-center">
-                            <h3 class="infoProduct__name">
-                                <a href="" title="san pham macca">hat macca</a>
-                            </h3>
-                            <p class="infoProduct__price">
-                                <span class="priceNotSale">300.000</span> <span class="priceSale">220.000</span>
-                            </p>
-
-                            <a href="" class="btn btn-default btn-add-cart">add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!--end section product-->
 @endsection

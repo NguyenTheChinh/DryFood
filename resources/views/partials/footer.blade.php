@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="col-xs-12 col-sm-4 footerInfoCompany">
-            <h4><strong>Cong ty co phan toan macca</strong></h4><br><br>
+            <h4><strong>Công ty TNHH MTV Đạt Thủy</strong></h4><br><br>
             <p><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ :số 8, Tiểu Khu 39, Xã Cò Nòi, Huyện Mai Sơn, Cò Nòi, Mai Sơn, Sơn La</p>
             <p><i class="fa fa-phone" aria-hidden="true"></i> Hotline: <span>0966.077.003 - 0987.112.995</span></p>
             <p><i class="fa fa-envelope" aria-hidden="true"></i> Email : toannguyenvan@gmail.com</p>

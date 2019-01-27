@@ -9,7 +9,7 @@
         <div class="container">
             <div class="bncTitle">
                 <hgroup class="v2_bnc_title_main">
-                    <span class="v2_bnc_title_icon"><i class="fa fa-file"></i></span><h2>Tin tuc</h2>
+                    <span class="v2_bnc_title_icon"><i class="fa fa-file"></i></span><h2>Tin tức</h2>
                 </hgroup>
             </div>
             @foreach (array_chunk($news, 3) as $newsChunk)

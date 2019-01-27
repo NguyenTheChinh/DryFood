@@ -80,7 +80,7 @@
                                     <a href="/san-pham/{{$dataProduct->url}}" title="san pham macca">{{$dataProduct->name}}</a>
                                 </h3>
                                 <p class="infoProduct__price">
-                                    <span class="priceNotSale">{{$dataProduct->old_price}}</span> <span class="priceSale">{{$dataProduct->price}}</span>
+                                    <span class="priceNotSale">{{ number_format($dataProduct->old_price)  }} Đ</span> <span class="priceSale">{{  number_format($dataProduct->price)}} Đ</span>
                                 </p>
     
                                 <form action="/" method="POST">
