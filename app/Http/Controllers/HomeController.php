@@ -21,8 +21,10 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $selectProduct = DB::select('select * from products');
-        return view('index',['selectProduct'=>$selectProduct]);
+//        $request->session()->flush();
+//        $request->session()->flush();
+//        dd( $request->session()->all());
+//        $productDetail = Product::find(5);
+        return view('index');
     }
-
 }

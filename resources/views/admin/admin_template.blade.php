@@ -83,8 +83,8 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="/svg/403.svg" width="89" height="25" alt="CoreUI Logo">
-        <img class="navbar-brand-minimized" src="/svg/404.svg" width="30" height="30" alt="CoreUI Logo">
+        <img class="navbar-brand-full" src="/uploadMedia/images/Logo.png" width="89" height="25" alt="Logo">
+        <img class="navbar-brand-minimized" src="/uploadMedia/images/Logo.png" width="30" height="30" alt="Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
@@ -115,16 +115,16 @@
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/order">
-                        <i class="nav-icon icon-speedometer"></i> Đơn Hàng
+                        <i class="nav-icon cui-cart"></i> Đơn Hàng
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/product">
-                        <i class="nav-icon icon-drop"></i> Sản phẩm</a>
+                        <i class="nav-icon icon-drawer"></i> Sản phẩm</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/category">
-                        <i class="nav-icon icon-drop"></i> Loại Sản phẩm</a>
+                        <i class="nav-icon icon-tag"></i> Loại Sản phẩm</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/news">
@@ -135,7 +135,7 @@
     </div>
     <main class="main">
         <div class="container-fluid">
-            <div class="animated fadeIn mt-3">
+            <div class="animated fadeIn mt-3 ck-content">
                 @yield('content')
             </div>
         </div>
@@ -147,6 +147,7 @@
 <script src="/admin_core/pace-progress/js/pace.min.js"></script>
 <script src="/admin_core/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
 <script src="/admin_core/@coreui/coreui/js/coreui.min.js"></script>
+<script src="/js/ckeditor/ckeditor.js"></script>
 @yield('plugins')
 </body>
 </html>

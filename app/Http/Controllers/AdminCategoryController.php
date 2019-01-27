@@ -91,7 +91,18 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        Validator::make($request->all(), [
+            'name' => 'required|string|max:255|unique:category',
+        ], [
+            'name.max' => 'Tên loại sản phẩm quá dài (>255 kí tự)',
+            'name.unique' => 'Tên loại sản phẩm đã tồn tại',
+        ])->validate();
+        $category->name = $request->input('name');
+        $category->url = str_slug($request->input('name'));
+        $category->save();
+        return response()->json([
+            'success'=>1
+        ]);
     }
 
     /**
@@ -102,6 +113,11 @@ class AdminCategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        if($category->Product->count()==0){
+            $category->delete();
+        }
+        return response()->json([
+            'success'=>1
+        ]);
     }
 }

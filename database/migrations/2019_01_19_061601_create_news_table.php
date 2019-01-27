@@ -20,6 +20,7 @@ class CreateNewsTable extends Migration
             $table->string('url')->nullable(false)->unique();
             $table->string('image') ->comment('anh bai viet');
             $table->text('content');
+            $table->integer('url_type')->nullable(false)->default(0)->comment('0: internal link, 1:external link');
             $table->timestamps();
         });
     }

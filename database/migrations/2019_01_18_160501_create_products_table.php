@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->text('avatar')->nullable(false)->comment(' link anh dai dien san pham');
             $table->text('image')->nullable(true)->comment(' link anh mo ta san pham');
             $table->integer('category_id')->unsigned();
+            $table->softDeletes();
 
             $table->foreign('category_id')->references('id')->on('category');
         });

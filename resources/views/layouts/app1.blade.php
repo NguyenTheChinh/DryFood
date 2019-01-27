@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/owlcarousel/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/owlcarousel/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
 
+    @yield('style')
     <!-- @yield('styles') -->
     @stack('styles')
 </head>

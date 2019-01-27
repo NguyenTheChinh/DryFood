@@ -4,7 +4,6 @@
     <link href="/css/admin/index.css" rel="stylesheet">
 @endsection
 @section('plugins')
-    <script src="/js/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
     <script>CKFinder.config({connectorPath: '/ckfinder/connector'});</script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>

@@ -16,6 +16,7 @@ class AdminOrderController extends Controller
             return $next($request);
         });
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +25,7 @@ class AdminOrderController extends Controller
     public function index()
     {
         $orders = Order::all();
+//        dd($orders[0]->order_product->withTrashed());
 //        dd($orders[0]->order_product);
         return view('admin.order.order_index', ['orders' => $orders]);
     }
@@ -80,7 +82,12 @@ class AdminOrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->status = 1 - $order->status;
+        $order->save();
+        return response()->json([
+            'success' => 1,
+            'status' => $order->status
+        ]);
     }
 
     /**

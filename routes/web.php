@@ -63,8 +63,9 @@ Route::get("/lien-he", function(){
 
 Route::get('/san-pham','ProducController@index');
 Route::get('/san-pham/{url}','ProducController@show');
-Route::post('/add-to-cart','CartController@add');
+Route::post('/cart/add','CartController@add');
+Route::post('/cart/remove','CartController@remove');
 
 Route::get('/xac-nhan-don-hang','OrderController@index');
 
-Route::get('/dat-hang-thanh-cong','OrderController@successOrder');
+Route::post('/order/create','OrderController@create');

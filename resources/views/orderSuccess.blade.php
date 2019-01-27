@@ -21,7 +21,7 @@
 
             <div class="successOrderContent row">
                 <h3 class="text-center">Đặt hàng thành công</h3>
-                <p class="text-center">Mã đơn hàng : </p>
+                <p class="text-center">Mã đơn hàng : {{$code}}</p>
 
                 <ul>
                     <li>Công ty trách nhiệm hữu hạn mtv Đạt Thủy chúng tôi sẽ thông tin chi tiết đơn hàng về email : phamtiendzbk@gmail.com</li>

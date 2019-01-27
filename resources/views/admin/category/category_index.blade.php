@@ -1,5 +1,6 @@
 @extends('admin.admin_template')
 @section('styles')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="/css/admin/index.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endsection
@@ -7,6 +8,7 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.0.1/dist/sweetalert2.all.min.js"></script>
     <script src="/js/admin/category/category_index.js"></script>
 @endsection
 @section('content')
@@ -33,7 +35,7 @@
                     <div class="modal-body">
                         <form action="/admin/category" method="POST">
                             {{ csrf_field() }}
-                            <input type="text" class="form-control mb-2" id="name" name="name">
+                            <input type="text" class="form-control mb-2" id="name" name="name" required>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </form>
@@ -53,13 +55,15 @@
         <tbody>
         @foreach($categories as $category)
             <tr>
-                <td><a href="/danh-muc/{{$category->url}}">{{$category->name}}</a></td>
+                <td>{{$category->name}}</td>
                 <td>{{$category->Product->count()}}</td>
                 <td class="d-flex">
-                    <a class="btn btn-info mr-2" href="/admin/category/{{$category->id}}/edit">
+                    <a class="btn btn-info mr-2 editCategory" data-id="{{$category->id}}" data-name="{{$category->name}}"
+                       href="javascript:void(0)">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a class="btn btn-danger deleteOrder" href="javascript:void(0)">
+                    <a class="btn btn-danger deleteCategory" data-count="{{$category->Product->count()}}" data-name="{{$category->name}}"
+                       data-id="{{$category->id}}" href="javascript:void(0)">
                         <i class="fa fa-trash-o"></i>
                     </a>
                 </td>

@@ -9,7 +9,6 @@ class newsController extends Controller
 {
     //
     public function index(){
-        $news = DB::select('select * from news');
-        return view("news",["news"=>$news]);
+        return view("news");
     }
 }

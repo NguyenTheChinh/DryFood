@@ -3,8 +3,8 @@ $(document).ready(function () {
         buttons: [
             {
                 text: 'My button',
-                action: function ( e, dt, node, config ) {
-                    alert( 'Button activated' );
+                action: function (e, dt, node, config) {
+                    alert('Button activated');
                 }
             }
         ],
@@ -49,7 +49,34 @@ $(document).ready(function () {
         }
     });
 
-    $('.deleteOrder').click(function () {
-
+    $('.changeStatus').click(function () {
+        let id = $(this).attr('data-id');
+        let statusTd = $(this).closest('td').siblings('.status');
+        let btn = $(this);
+        btn.prop('disabled', true);
+        $.ajax({
+            url: `/admin/order/${id}`,
+            method: 'PUT',
+            headers:
+                {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+            success: function (data) {
+                btn.prop('disabled', false);
+                if (data.success) {
+                    toastr.success('Cập nhật trạng thái đơn hàng thành công');
+                    if (data.status === 0) {
+                        statusTd.html('<span class="badge badge-warning">Chưa Xong</span>');
+                    } else {
+                        statusTd.html(`<span class="badge badge-success">Đã Xong</span>`);
+                    }
+                } else {
+                    toastr.error('Cập nhật trạng thái đơn hàng thất bại');
+                }
+            },
+            error: function(){
+                btn.prop('disabled', false);
+            }
+        });
     })
 });

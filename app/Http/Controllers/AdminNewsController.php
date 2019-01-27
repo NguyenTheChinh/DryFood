@@ -53,10 +53,10 @@ class AdminNewsController extends Controller
             'subtitle' => 'required|string',
             'content' => 'required|string',
             'image' => 'required|image',
-        ],[
-            'title.required'=>'Tiêu đề không thể bỏ trống',
-            'title.max'=>'Tiêu đề quá dài (>255 kí tự)',
-            'image.image' =>'Ảnh đại diện không hợp lệ'
+        ], [
+            'title.required' => 'Tiêu đề không thể bỏ trống',
+            'title.max' => 'Tiêu đề quá dài (>255 kí tự)',
+            'image.image' => 'Ảnh đại diện không hợp lệ'
         ])->validate();
 
         if ($request->hasFile('image')) {
@@ -64,10 +64,11 @@ class AdminNewsController extends Controller
             $news = new News;
             $news->title = $request->input('title');
             $news->subtitle = $request->input('subtitle');
-            $news->url = str_slug($request->input('title').'-'.mt_rand(100000,999999));
-            $news->image= '/uploadMedia/' . $avatar;
+            $news->url = str_slug($request->input('title') . '-' . mt_rand(100000, 999999));
+            $news->image = '/uploadMedia/' . $avatar;
             $news->content = $request->input('content');
             $news->save();
+            return view('admin.news.news_create_success', ['url' => $news->url]);
         }
     }
 
@@ -90,7 +91,7 @@ class AdminNewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        return view('admin.news.news_edit', ['news' => $news]);
     }
 
     /**
@@ -102,7 +103,27 @@ class AdminNewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        Validator::make($request->all(), [
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string',
+            'content' => 'required|string',
+            'image' => 'image',
+        ], [
+            'title.required' => 'Tiêu đề không thể bỏ trống',
+            'title.max' => 'Tiêu đề quá dài (>255 kí tự)',
+            'image.image' => 'Ảnh đại diện không hợp lệ'
+        ])->validate();
+
+        if ($request->hasFile('image')) {
+            $avatar = Storage::disk('uploads')->put('news', $request->file('image'));
+            $news->image = '/uploadMedia/' . $avatar;
+        }
+        $news->title = $request->input('title');
+        $news->subtitle = $request->input('subtitle');
+        $news->url = str_slug($request->input('title') . '-' . mt_rand(100000, 999999));
+        $news->content = $request->input('content');
+        $news->save();
+        return view('admin.news.news_edit_success', ['url' => $news->url]);
     }
 
     /**
@@ -113,6 +134,9 @@ class AdminNewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        $news->delete();
+        return response()->json([
+            'success'=>1
+        ]);
     }
 }

@@ -113,5 +113,8 @@
     <orderEntry type="library" name="sweetalert2.all" level="application" />
     <orderEntry type="library" name="platform" level="application" />
     <orderEntry type="library" name="ckeditor" level="application" />
+    <orderEntry type="library" name="toastr" level="application" />
+    <orderEntry type="library" name="fotorama" level="application" />
+    <orderEntry type="library" name="select2" level="application" />
   </component>
 </module>

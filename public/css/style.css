@@ -1168,69 +1168,6 @@ footer {
 .centerLogo img {
   margin: 0px auto; }
 
-
-/*CSS cho trang đặt hàng thành công*/
-
-
-.successOrder .blockTitle h2 {
-  padding: 5px 10px;
-  font-size: 33px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  position: relative;
-  z-index: 1;
-  overflow: visible;
-  text-transform: uppercase;
-  text-align: center;
-  color: #203872; }
-  .successOrder .blockTitle h2 a {
-    color: #203872;
-    padding: 0 20px;
-    line-height: 36px;
-    background: #fff;
-    padding: 0 10px;
-    z-index: 999999;
-    /* font-weight: 600; */
-    display: inline-block;
-    /* text-transform: uppercase; */
-    text-decoration: none; }
-  .successOrder .blockTitle h2::after {
-    content: "";
-    background: #203872;
-    height: 1px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    right: 0;
-    z-index: -1; }
-
-    .successOrderContent{
-      padding: 15px;
-      -webkit-box-shadow: 0px 0px 20px -5px rgba(51, 122, 183, 0.84);
-      -moz-box-shadow: 0px 0px 20px -5px rgba(51, 122, 183, 0.84);
-      box-shadow: 0px 0px 20px -5px rgba(51, 122, 183, 0.84);
-    }
-
-.successOrder .successOrderContent h3{
-  color: #203872;
-}
-.successOrder .successOrderContent p{
-  color: rgb(160, 36, 36);
-}
-.successOrder .successOrderContent ul li{
-  font-size: 14px;
-  color: #434248;
-}
-.successOrder .successOrderContent .btn-back{
-  color: white;
-  background: #203872;
-}
-.successOrder .successOrderContent .btn-back:hover{
-  background: #011144;
-}
-
 /*Responsive for mobile*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   header .logo {

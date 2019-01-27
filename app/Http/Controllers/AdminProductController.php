@@ -19,6 +19,7 @@ class AdminProductController extends Controller
             return $next($request);
         });
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,8 +28,6 @@ class AdminProductController extends Controller
     public function index()
     {
         $products = Product::all();
-//        dd($products[0]);
-//        dd($products[0]->category->name);
         return view('admin.product.product_index', ['products' => $products]);
     }
 
@@ -60,12 +59,12 @@ class AdminProductController extends Controller
             'description' => 'required|string',
             'avatar' => 'required|image',
             'image.*' => 'image',
-        ],[
-            'name.required'=>'Tên sản phẩm không thể bỏ trống',
-            'name.max'=>'Tên sản phẩm quá dài (>255 kí tự)',
-            'code.unique'=>'Mã sản phẩm đã tồn tại',
-            'code.max'=>'Mã sản phẩm quá dài (>255 kí tự)',
-            'avatar.image' =>'Ảnh đại diện không hợp lệ'
+        ], [
+            'name.required' => 'Tên sản phẩm không thể bỏ trống',
+            'name.max' => 'Tên sản phẩm quá dài (>255 kí tự)',
+            'code.unique' => 'Mã sản phẩm đã tồn tại',
+            'code.max' => 'Mã sản phẩm quá dài (>255 kí tự)',
+            'avatar.image' => 'Ảnh đại diện không hợp lệ'
         ])->validate();
         if ($request->hasFile('avatar')) {
             $avatar = Storage::disk('uploads')->put('products/avatar', $request->file('avatar'));
@@ -114,7 +113,8 @@ class AdminProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        return view('admin.product.product_edit', ['product' => $product, 'categories' => $categories]);
     }
 
     /**
@@ -126,7 +126,59 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+//        dd($request->all());
+        Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'category_id' => 'required|numeric|min:1',
+            'code' => 'required|string|max:255|unique:products,code,'. $product->id,
+            'old_price' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:0',
+            'description' => 'required|string',
+            'avatar' => 'image',
+            'image.*' => 'image',
+        ], [
+            'name.required' => 'Tên sản phẩm không thể bỏ trống',
+            'name.max' => 'Tên sản phẩm quá dài (>255 kí tự)',
+            'code.unique' => 'Mã sản phẩm đã tồn tại',
+            'code.max' => 'Mã sản phẩm quá dài (>255 kí tự)',
+            'avatar.image' => 'Ảnh đại diện không hợp lệ'
+        ])->validate();
+
+        $product->name = $request->input('name');
+        $product->url = str_slug($request->input('name') . '-' . $request->input('code'));
+        $product->subtitle = $request->input('subtitle');
+        $product->description = $request->input('description');
+        $product->code = $request->input('code');
+        $product->old_price = $request->input('old_price');
+        $product->price = $request->input('price');
+        $product->category_id = $request->input('category_id');
+
+        if ($request->hasFile('avatar')) {
+            $avatar = Storage::disk('uploads')->put('products/avatar', $request->file('avatar'));
+            $product->avatar = '/uploadMedia/' . $avatar;
+        }
+
+        $images = '';
+        if ($request->hasFile('image')) {
+            foreach ($request->image as $key => $image) {
+                if ($key == 0) {
+                    $images .= '/uploadMedia/' . Storage::disk('uploads')->put('products/description', $image);
+                } else $images .= ' | /uploadMedia/' . Storage::disk('uploads')->put('products/description', $image);
+            }
+        }
+        if (!is_null($request->input('old_image'))) {
+            $product->image = $request->input('old_image');
+            if (!empty($image)) {
+                $product->image .= ' | ' . $images;
+            }
+        } else {
+            $product->image = '';
+            if (!empty($image)) {
+                $product->image = $images;
+            }
+        }
+        $product->save();
+        return view('admin.product.product_edit_success', ['url' => $product->url]);
     }
 
     /**
@@ -137,6 +189,9 @@ class AdminProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return response()->json([
+            'success'=>1
+        ]);
     }
 }

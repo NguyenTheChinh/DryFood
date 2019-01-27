@@ -18,6 +18,6 @@ class Order_Product extends Model
 
     public function Product()
     {
-        return $this->belongsTo('App\Product', 'products_id', 'id');
+        return $this->belongsTo('App\Product', 'products_id', 'id')->withTrashed();
     }
 }

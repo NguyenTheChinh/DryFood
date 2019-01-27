@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
-        $selectProduct = DB::select('select * from products');
+        $selectProduct = DB::select('select * from products where deleted_at is null');
         View::share('selectProduct', $selectProduct);
         $news = DB::select('select * from news');
         View::share('news',$news);
