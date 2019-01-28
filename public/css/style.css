@@ -947,6 +947,14 @@ footer {
         right: -36px;
         top: 0; }
 
+  .commentFacebook .commentBox iframe{
+    width: 100%!important;
+  }
+  .fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
 /*-----------------------------------End css for detail product-----------------------------------*/
 .opionCustomer .bncTitle .v2_bnc_title_main {
   background: #e7e7e7;

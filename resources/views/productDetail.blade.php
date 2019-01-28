@@ -73,6 +73,12 @@
 
             <div class="describeContent ck-content">
                 <?php echo "$product->description"?>
+
+                <script>
+                    /*js them bang vao mo ta*/
+                    $(".describeContent table").wrap("<div class='table-responsive'></div>");
+                    $(".describeContent table").addClass("table");
+                </script>
             </div>
         </div>
     </section>
@@ -135,8 +141,12 @@
             </div>
 
             <div class="commentBox">
-                KHi nao up len ms chay dc
+                <div class="fb-comments" data-href="http://healthynuts.com.vn/" data-width="100%" data-numposts="10" style="width : 100%"></div>
             </div>
+
+            <script>
+                $(".fb-comments iframe").css("width","100%");
+            </script>
         </div>
     </section>
 @endsection

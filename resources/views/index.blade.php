@@ -12,16 +12,16 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="/uploadMedia/images/banner1.png" alt="banner1" class="img-responsive">
+                    <img src="/uploadMedia/images/Banner-01.png" alt="banner1" class="img-responsive">
                 </div>
             
                 <div class="item">
-                    <img src="/uploadMedia/images/banner1.png" alt="Chicago" class="img-responsive">
+                    <img src="/uploadMedia/images/Banner-02.png" alt="Chicago" class="img-responsive">
                 </div>
             
-                <div class="item">
+                {{-- <div class="item">
                     <img src="/uploadMedia/images/banner1.png" alt="Chicago" class="img-responsive">
-                </div>
+                </div> --}}
             </div>
             
 
@@ -46,9 +46,7 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-6 ourCompanyContent__textIntro">
-                    Công ty Toan Maca ra đời với mong muốn luôn đồng hành cùng người nông dân trồng Mắc ca Việt Nam để cùng đem lại những sản phẩm thơm ngon, bổ dưỡng, chất lượng nhất từ những hạt Macca của vùng cao nguyên Việt Nam đến với khách hàng.
-                    Cung cấp những sản phẩm khô tốt nhất trên thị trường, với mong muốn mang lại những thực phẩm dinh dưỡng, có ích cho cộng đồng, xã hội,.....
-                    Chúng tôi có bề dày lịch sử 30 năm trong thị trường phân phối quả khô..... <a href="">Xem thêm</a>
+                        Công ty Trách Nhiệm Hữu Hạn Một Thành Viên Đạt Thủy thành lập từ năm 2008, với trên 10 năm kinh nghiệm trong ngành nông sản, đặc biệt là các sản phẩm khô cụ thể là ngô, khoai, sắn tại vùng Tây Bắc ( Sơn La, Điện Biên, Lai Châu, Hòa Bình ). Từ năm 2014, chúng tôi nhận thấy sự quan trọng và cần thiết đối với sức khỏe con người từ các loại hạt khô như Macca, Óc Chó, Điều, Hạnh Nhân... Những năm qua chúng tôi đã không ngừng nghiên cứu và liên tục bổ sung kiến thức từ các nhà thị trường trong và ngoài nước để hình thành những sản phẩm sản xuất bằng dây chuyền trong nhà kính đạt chất lượng cao nhất và an toàn vệ sinh tuyệt đối 100%. Chúng tôi với đội ngũ cán bộ công nhân viên công ty giàu nhiệt huyết và sự cần mẫn tỉ mỉ trong từng khâu sản xuất xin hứa trong tương lai không xa sẽ đem tới thị trường nội địa, và xuất khẩu những sản phẩm về hạt khô phong phú để luôn làm hài lòng quý khách!
                 </div>
             </div>
         </div>
