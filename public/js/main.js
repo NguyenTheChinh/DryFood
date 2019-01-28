@@ -47,6 +47,11 @@ $(".shoppingCart").on("click", function () {
     $(".shoppingCartContent").slideToggle();
 });
 
+/*js them bang vao mo ta*/
+$(".describeContent table").wrap("<div class='table-responsive'></div>");
+$(".describeContent table").addClass("table")
+
+
 $('.delete-product-cart').on('click',function () {
     let id = $(this).attr('data-id');
     $.ajax({
