@@ -24,7 +24,7 @@
 </head>
 
 
-<body>
+<body class="ck-content">
     @yield('content')
 
     @include('partials.footer')

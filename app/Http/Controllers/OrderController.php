@@ -17,6 +17,9 @@ class OrderController extends Controller
             return view("paymentValidate");
         } else return redirect('/');
     }
+    public function successOrder(){
+        return view("orderSuccess");
+    }
 
     public function create(Request $request)
     {

@@ -34,8 +34,8 @@
         <div class="container">
             <div class="blockTitle">
                 <h2>
-                    <a href="">
-                        Gioi thieu chung ve cong ty
+                    <a href="javascript:void(0)">
+                        Giới thiệu chung về công ty
                     </a>
                 </h2>
             </div>
@@ -59,8 +59,8 @@
         <div class="container">
             <div class="blockTitle">
                 <h2>
-                    <a href="">
-                        San pham cua Toan macca
+                    <a href="javascript:void(0)">
+                        Sản Phẩm
                     </a>
                 </h2>
             </div>
@@ -97,7 +97,7 @@
 
     <!--end section product-->
 
-    <section class="partner">
+    {{-- <section class="partner">
         <div class="container">
             <div class="blockTitle">
                 <h2><a href="">Doi Tac va cac chung chi</a></h2>
@@ -137,7 +137,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--end section partner-->
     <section class="news">
         <div class="container">
